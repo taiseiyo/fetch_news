@@ -1,5 +1,8 @@
 name: Action 
 
+env:
+  line_apikey: ${{secrets.LINE_APIKEY}}
+
 on:
   # schedule:
   #   - cron: '0 3 * * *'
@@ -20,6 +23,6 @@ jobs:
       - name: Install dependencies 
         run: pip install -r requirements.txt
       - name: Run Python
-        run:  python fetch_news.py
+        run:  python fetch_news.py ${line_apikey}
 
       

@@ -1,13 +1,12 @@
 #!/usr/bin/env python
-from dotenv import dotenv_values
 from bs4 import BeautifulSoup
 import requests
+import sys
 
 
 def line_sender(message):
     URL = "https://notify-api.line.me/api/notify"
-    config = dotenv_values(".setting")
-    headers = {'Authorization': 'Bearer ' + config["line_apiKey"]}
+    headers = {'Authorization': 'Bearer ' + sys.argv[1]}
     payload = {'message': message}
     requests.post(URL, headers=headers, params=payload)
 
