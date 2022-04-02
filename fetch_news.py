@@ -21,9 +21,10 @@ def main():
     for count in range(1, 8):
         selector = "li.sc-dNLxif:nth-child(" + str(count) + ")"
         href_selector = selector + " > a:nth-child(1)"
-        texts.append("TITLE: " + html.select(selector)[0].get_text())
-        texts.append("URL: " + html.select(href_selector)[0].get("href")+"\n")
-    line_sender(texts)
+        texts.append("TITLE: " + html.select(selector)[0].get_text()+"\n")
+        texts.append("URL: " + html.select(href_selector)
+                     [0].get("href")+(2*"\n"))
+    line_sender("".join(texts))
 
 
 main()
