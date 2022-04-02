@@ -22,6 +22,6 @@ jobs:
       - name: Run Python
         env:
           - line_apikey: ${{secrets.LINE_APIKEY}}
-        run:  python fetch_news.py ${line_apikey}
+        run: python fetch_news.py ${line_apikey}
 
       
