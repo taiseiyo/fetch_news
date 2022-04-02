@@ -1,13 +1,10 @@
 name: Action 
 
-on: push
-  # schedule:
-  #   - cron: '0 3 * * *'
-  # push:
-    # branches:
-    #   - master
-  # workflow_dispatch:
-        
+# on: push
+on:
+  schedule:
+    - cron: '0 3 * * *'
+       
 jobs:
   build:  
     runs-on: ubuntu-latest
