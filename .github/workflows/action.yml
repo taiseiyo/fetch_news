@@ -1,11 +1,11 @@
 name: Action 
 
-on:
+on: push
   # schedule:
   #   - cron: '0 3 * * *'
-  push:
-    branches:
-      - master
+  # push:
+    # branches:
+    #   - master
   # workflow_dispatch:
   
 jobs:
