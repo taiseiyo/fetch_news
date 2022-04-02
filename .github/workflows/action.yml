@@ -1,8 +1,5 @@
 name: Action 
 
-env:
-  line_apikey: ${{secrets.LINE_APIKEY}}
-
 on:
   # schedule:
   #   - cron: '0 3 * * *'
@@ -13,6 +10,8 @@ on:
   
 jobs:
   build:
+    env:
+      - line_apikey: ${{secrets.LINE_APIKEY}}
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
