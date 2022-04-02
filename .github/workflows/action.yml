@@ -9,9 +9,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  build:
-    env:
-      - line_apikey: ${{secrets.LINE_APIKEY}}
+  build:  
     runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +20,8 @@ jobs:
       - name: Install dependencies 
         run: pip install -r requirements.txt
       - name: Run Python
+        env:
+          - line_apikey: ${{secrets.LINE_APIKEY}}
         run:  python fetch_news.py ${line_apikey}
 
       
